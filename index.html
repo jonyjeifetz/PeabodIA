@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PeabodIA - Tu compañero inteligente de aprendizaje y automatización</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased">
+
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
+        <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <!-- Logo del perrito IA -->
+                <div class="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center shadow-md shadow-blue-500/20">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                    </svg>
+                </div>
+                <span class="text-xl font-bold tracking-tight text-slate-900">Peabod<span class="text-blue-600">IA</span></span>
+            </div>
+            <nav class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
+                <a href="#inicio" class="hover:text-blue-600 transition">Inicio</a>
+                <a href="#como-funciona" class="hover:text-blue-600 transition">Cómo Funciona</a>
+                <a href="#modos" class="hover:text-blue-600 transition">Modos de Acción</a>
+            </nav>
+            <a href="#contacto" class="bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-5 py-2.5 rounded-xl transition shadow-sm shadow-blue-600/30">Probar Gratis</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="pt-20 pb-28 px-6 overflow-hidden">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <div class="inline-flex items-center space-x-2 bg-amber-100 text-amber-800 text-xs font-semibold px-3.5 py-1.5 rounded-full">
+                    <span>🐶 Tu asistente inteligente de confianza</span>
+                </div>
+                <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                    Aprende o delégalo. <span class="text-blue-600">PeabodIA</span> lo hace posible.
+                </h1>
+                <p class="text-lg text-slate-600 leading-relaxed">
+                    Un agente de inteligencia artificial diseñado para acompañarte. Te guía paso a paso para que aprendas a resolver tus tareas, o toma el control absoluto y te avisa cuando finalice.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                    <a href="#contacto" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold text-center px-8 py-3.5 rounded-xl transition shadow-lg shadow-blue-600/25">Empezar Ahora</a>
+                    <a href="#como-funciona" class="bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 font-semibold text-center px-8 py-3.5 rounded-xl transition">Conocer Más</a>
+                </div>
+            </div>
+            <div class="relative flex justify-center">
+                <!-- Ilustración / Tarjeta Visual Interactiva -->
+                <div class="w-full max-w-md bg-white p-8 rounded-3xl border border-slate-100 shadow-xl shadow-slate-200/50 relative">
+                    <div class="absolute -top-4 -right-4 bg-amber-400 text-slate-900 text-xs font-bold px-3 py-1 rounded-full shadow">IA Activa</div>
+                    <div class="flex items-center space-x-4 mb-6">
+                        <div class="w-12 h-12 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 font-bold text-xl">🐾</div>
+                        <div>
+                            <h3 class="font-bold text-slate-900">Hola, soy PeabodIA</h3>
+                            <p class="text-xs text-slate-500">¿Qué desafío resolvemos hoy?</p>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-100 text-sm text-slate-700 flex items-center justify-between">
+                            <span>Modo Guía (Aprendizaje activo)</span>
+                            <span class="w-2.5 h-2.5 bg-green-500 rounded-full"></span>
+                        </div>
+                        <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-100 text-sm text-slate-700 flex items-center justify-between">
+                            <span>Modo Automático (Delegado)</span>
+                            <span class="w-2.5 h-2.5 bg-blue-500 rounded-full"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modos Section -->
+    <section id="modos" class="py-24 bg-white border-y border-slate-100 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
+                <h2 class="text-3xl font-bold text-slate-900">Dos formas de trabajar adaptadas a vos</h2>
+                <p class="text-slate-600">Elige cómo querés que PeabodIA te acompañe en tus proyectos diarios.</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Tarjeta Modo Guía -->
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100 space-y-6">
+                    <div class="w-12 h-12 rounded-2xl bg-amber-500 text-white flex items-center justify-center text-xl font-bold shadow-md shadow-amber-500/20">💡</div>
+                    <h3 class="text-xl font-bold text-slate-900">1. Modo Guía (Aprende haciendo)</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        Ideal cuando quieres entender el proceso. PeabodIA te acompaña paso a paso, explicándote los conceptos clave para que adquieras la habilidad y puedas resolverlo por ti mismo la próxima vez.
+                    </p>
+                </div>
+                <!-- Tarjeta Modo Automático -->
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100 space-y-6">
+                    <div class="w-12 h-12 rounded-2xl bg-blue-600 text-white flex items-center justify-center text-xl font-bold shadow-md shadow-blue-600/20">⚡</div>
+                    <h3 class="text-xl font-bold text-slate-900">2. Modo Automático (Delegado)</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        Cuando el tiempo es tirano. Le delegas la tarea por completo a PeabodIA, él se encarga de procesarlo de fondo de principio a fin y te envía una notificación sonora o visual cuando el trabajo esté listo.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contacto" class="py-12 bg-slate-900 text-slate-400 text-sm px-6">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center space-x-3">
+                <div class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center text-white font-bold">🐾</div>
+                <span class="text-white font-bold tracking-tight">PeabodIA</span>
+            </div>
+            <p>© 2026 PeabodIA. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
