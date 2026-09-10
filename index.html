@@ -8,7 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
-        /* Animación suave para la notificación flotante */
         @keyframes slideIn {
             from { transform: translateY(100%); opacity: 0; }
             to { transform: translateY(0); opacity: 1; }
@@ -31,9 +30,9 @@
     <!-- Header / Navbar -->
     <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
         <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
-            <!-- Logo más grande en el header -->
+            <!-- Logo con mix-blend-multiply para ocultar el fondo blanco al hacer scroll -->
             <a href="#top" class="flex items-center space-x-3 cursor-pointer focus:outline-none">
-                <img src="logo2.jpg" alt="PeabodIA Logo" class="h-14 w-auto object-contain">
+                <img src="logo.jpg" alt="PeabodIA Logo" class="h-14 w-auto object-contain mix-blend-multiply">
             </a>
             <!-- Menú de navegación -->
             <nav class="hidden md:flex space-x-8 text-sm font-medium">
@@ -193,7 +192,6 @@
     <footer id="contacto" class="py-12 bg-slate-900 text-slate-400 text-sm px-6 border-t border-slate-800">
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
             <a href="#top" class="cursor-pointer focus:outline-none inline-block hover:opacity-90 transition">
-                <!-- Logo extra grande a h-32 -->
                 <img src="logo1.jpg" alt="PeabodIA Logo" class="h-32 w-auto object-contain">
             </a>
             <div class="flex items-center space-x-2 text-slate-300">
@@ -204,7 +202,7 @@
         </div>
     </footer>
 
-    <!-- Notificación flotante (Toast) para guiar al usuario de vuelta -->
+    <!-- Notificación flotante (Toast) -->
     <div id="toast-notification" class="fixed bottom-6 right-6 z-50 hidden bg-slate-900 text-white px-5 py-3.5 rounded-2xl shadow-2xl border border-slate-800 flex items-center space-x-3 toast-enter">
         <span class="text-xl">🐾</span>
         <div>
@@ -226,7 +224,6 @@
             const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subject}&body=${body}`;
             window.open(gmailUrl, '_blank');
 
-            // Limpia el input, quita el foco y muestra la notificación en la página
             input.value = "";
             input.blur();
             showToast();
@@ -245,7 +242,7 @@
             toast.classList.remove('hidden');
             setTimeout(() => {
                 toast.classList.add('hidden');
-            }, 4000); // Ocultar después de 4 segundos
+            }, 4000);
         }
     </script>
 
