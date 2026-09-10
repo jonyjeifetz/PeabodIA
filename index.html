@@ -10,7 +10,6 @@
         body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
     </style>
     <script>
-        /* Este script fuerza a la página a ir arriba de todo al recargar */
         if (history.scrollRestoration) {
             history.scrollRestoration = 'manual';
         }
@@ -25,7 +24,6 @@
     <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
         <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
             <div class="flex items-center space-x-3">
-                <!-- Logo del perrito IA -->
                 <div class="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center shadow-md shadow-blue-500/20">
                     <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
@@ -33,19 +31,18 @@
                 </div>
                 <span class="text-xl font-bold tracking-tight text-slate-900">Peabod<span class="text-blue-600">IA</span></span>
             </div>
-            <nav class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
-                <!-- El link al inicio apunta al #top -->
-                <a href="#top" class="hover:text-blue-600 transition">Inicio</a>
-                <a href="#como-funciona" class="hover:text-blue-600 transition">Cómo Funciona</a>
-                <a href="#modos" class="hover:text-blue-600 transition">Modos de Acción</a>
+            <!-- Menú de navegación con clases de control activo -->
+            <nav class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="#top" class="nav-link text-slate-600 hover:text-blue-600 transition" data-target="top">Inicio</a>
+                <a href="#como-funciona" class="nav-link text-slate-600 hover:text-blue-600 transition" data-target="como-funciona">Cómo Funciona</a>
+                <a href="#modos" class="nav-link text-slate-600 hover:text-blue-600 transition" data-target="modos">Modos de Acción</a>
             </nav>
-            <!-- Botón lleva a la Chrome Store en nueva pestaña -->
             <a href="https://chrome.google.com/webstore" target="_blank" rel="noopener noreferrer" class="bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-5 py-2.5 rounded-xl transition shadow-sm shadow-blue-600/30">Descargar Extensión</a>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="pt-20 pb-28 px-6 overflow-hidden bg-slate-50">
+    <section id="top" class="pt-20 pb-28 px-6 overflow-hidden bg-slate-50">
         <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
             <div class="space-y-6">
                 <div class="inline-flex items-center space-x-2 bg-amber-100 text-amber-800 text-xs font-semibold px-3.5 py-1.5 rounded-full">
@@ -63,7 +60,6 @@
                 </div>
             </div>
             <div class="relative flex justify-center">
-                <!-- Ilustración Visual Interactiva -->
                 <div class="w-full max-w-md bg-white p-8 rounded-3xl border border-slate-100 shadow-xl shadow-slate-200/50 relative">
                     <div class="absolute -top-4 -right-4 bg-amber-400 text-slate-900 text-xs font-bold px-3 py-1 rounded-full shadow">Extensión Activa</div>
                     <div class="flex items-center space-x-4 mb-6">
@@ -88,11 +84,10 @@
         </div>
     </section>
 
-    <!-- Cómo Funciona Section (NUEVA) -->
+    <!-- Cómo Funciona Section -->
     <section id="como-funciona" class="py-24 bg-white px-6">
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-16">
             <div class="md:w-1/2 flex justify-center relative">
-                <!-- Mockup visual de Chrome Extension -->
                 <div class="w-full max-w-sm bg-slate-100 p-2 rounded-xl shadow-inner border border-slate-200">
                     <div class="bg-white rounded-lg shadow-lg border border-slate-200 overflow-hidden">
                         <div class="bg-slate-800 px-4 py-2 flex items-center justify-between">
@@ -144,7 +139,6 @@
                 <p class="text-slate-600">Desde la extensión, elige cómo quieres que PeabodIA actúe frente a tu problema.</p>
             </div>
             <div class="grid md:grid-cols-2 gap-8">
-                <!-- Tarjeta Modo Guía -->
                 <div class="bg-white p-8 rounded-3xl border border-slate-200 space-y-6 hover:border-amber-300 transition-colors shadow-sm">
                     <div class="w-12 h-12 rounded-2xl bg-amber-500 text-white flex items-center justify-center text-xl font-bold shadow-md shadow-amber-500/20">💡</div>
                     <h3 class="text-xl font-bold text-slate-900">1. Que te enseñe (Modo Guía)</h3>
@@ -152,12 +146,11 @@
                         Ideal cuando quieres entender el proceso. PeabodIA te acompaña paso a paso, explicándote los conceptos clave en tu pantalla para que adquieras la habilidad y no necesites ayuda la próxima vez.
                     </p>
                 </div>
-                <!-- Tarjeta Modo Automático -->
                 <div class="bg-white p-8 rounded-3xl border border-slate-200 space-y-6 hover:border-blue-400 transition-colors shadow-sm">
                     <div class="w-12 h-12 rounded-2xl bg-blue-600 text-white flex items-center justify-center text-xl font-bold shadow-md shadow-blue-600/20">⚡</div>
                     <h3 class="text-xl font-bold text-slate-900">2. Que lo haga por ti (Automático)</h3>
                     <p class="text-slate-600 leading-relaxed">
-                        Cuando no tienes tiempo o prefieres delegar. PeabodIA se encarga de procesar la tarea de principio a fin de forma automática y te notifica en la extensión cuando el trabajo está listo.
+                        Cuando no tienes tiempo o prefieres delegar. PeabodIA se encarga de procesar la tarea de principio a fin de forma automática y te notifica en la extensión cuando el trabajo esté listo.
                     </p>
                 </div>
             </div>
@@ -175,5 +168,30 @@
         </div>
     </footer>
 
+    <!-- Script para activar el color celeste en la sección activa -->
+    <script>
+        const sections = document.querySelectorAll("section, #top");
+        const navLinks = document.querySelectorAll(".nav-link");
+
+        window.addEventListener("scroll", () => {
+            let current = "";
+            sections.forEach((section) => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= sectionTop - 150) {
+                    current = section.getAttribute("id");
+                }
+            });
+
+            navLinks.forEach((link) => {
+                link.classList.remove("text-sky-400", "font-semibold");
+                link.classList.add("text-slate-600");
+                if (link.getAttribute("data-target") === current) {
+                    link.classList.remove("text-slate-600");
+                    link.classList.add("text-sky-400", "font-semibold");
+                }
+            });
+        });
+    </script>
 </body>
 </html>
