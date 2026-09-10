@@ -31,9 +31,9 @@
                 </div>
                 <span class="text-xl font-bold tracking-tight text-slate-900">Peabod<span class="text-blue-600">IA</span></span>
             </div>
-            <!-- Menú de navegación con clases de control activo -->
+            <!-- Menú de navegación -->
             <nav class="hidden md:flex space-x-8 text-sm font-medium">
-                <a href="#top" class="nav-link text-slate-600 hover:text-blue-600 transition" data-target="top">Inicio</a>
+                <a href="#top" class="nav-link text-blue-600 font-semibold transition" data-target="top">Inicio</a>
                 <a href="#como-funciona" class="nav-link text-slate-600 hover:text-blue-600 transition" data-target="como-funciona">Cómo Funciona</a>
                 <a href="#modos" class="nav-link text-slate-600 hover:text-blue-600 transition" data-target="modos">Modos de Acción</a>
             </nav>
@@ -150,7 +150,7 @@
                     <div class="w-12 h-12 rounded-2xl bg-blue-600 text-white flex items-center justify-center text-xl font-bold shadow-md shadow-blue-600/20">⚡</div>
                     <h3 class="text-xl font-bold text-slate-900">2. Que lo haga por ti (Automático)</h3>
                     <p class="text-slate-600 leading-relaxed">
-                        Cuando no tienes tiempo o prefieres delegar. PeabodIA se encarga de procesar la tarea de principio a fin de forma automática y te notifica en la extensión cuando el trabajo esté listo.
+                        Когда no tienes tiempo o prefieres delegar. PeabodIA se encarga de procesar la tarea de principio a fin de forma automática y te notifica en la extensión cuando el trabajo esté listo.
                     </p>
                 </div>
             </div>
@@ -168,27 +168,29 @@
         </div>
     </footer>
 
-    <!-- Script para activar el color celeste en la sección activa -->
+    <!-- Script corregido para detección precisa de sección activa con azul oscuro -->
     <script>
         const sections = document.querySelectorAll("section, #top");
         const navLinks = document.querySelectorAll(".nav-link");
 
         window.addEventListener("scroll", () => {
             let current = "";
+            const scrollPosition = window.scrollY + 250; // Ajuste de offset para mayor precisión
+
             sections.forEach((section) => {
                 const sectionTop = section.offsetTop;
                 const sectionHeight = section.clientHeight;
-                if (window.scrollY >= sectionTop - 150) {
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
                     current = section.getAttribute("id");
                 }
             });
 
             navLinks.forEach((link) => {
-                link.classList.remove("text-sky-400", "font-semibold");
+                link.classList.remove("text-blue-600", "font-semibold");
                 link.classList.add("text-slate-600");
                 if (link.getAttribute("data-target") === current) {
                     link.classList.remove("text-slate-600");
-                    link.classList.add("text-sky-400", "font-semibold");
+                    link.classList.add("text-blue-600", "font-semibold");
                 }
             });
         });
