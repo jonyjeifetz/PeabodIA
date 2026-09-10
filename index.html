@@ -190,13 +190,14 @@
             </a>
             <div class="flex items-center space-x-2 text-slate-300">
                 <span>Contacto:</span>
-                <span class="text-blue-400">peabodia@gmail.com</span>
+                <!-- Convertido en enlace interactivo que abre Gmail -->
+                <a href="javascript:sendDirectEmail()" class="text-blue-400 hover:underline focus:outline-none">peabodia@gmail.com</a>
             </div>
             <p>© 2026 PeabodIA. Todos los derechos reservados.</p>
         </div>
     </footer>
 
-    <!-- Script corregido para gestionar el foco y el cursor correctamente -->
+    <!-- Scripts de gestión de correos -->
     <script>
         function sendEmail() {
             const input = document.getElementById('user-message');
@@ -209,9 +210,17 @@
             const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subject}&body=${body}`;
             window.open(gmailUrl, '_blank');
 
-            // Limpia el input y fuerza el foco al final del texto o al inicio de forma limpia
+            // Limpia el input y quita el foco
             input.value = "";
             input.blur();
+        }
+
+        // Función específica para abrir Gmail limpio al hacer clic en el email del footer
+        function sendDirectEmail() {
+            const email = "peabodia@gmail.com";
+            const subject = encodeURIComponent("Dudas o Sugerencias sobre PeabodIA");
+            const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subject}`;
+            window.open(gmailUrl, '_blank');
         }
     </script>
 
